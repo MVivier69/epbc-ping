@@ -1,4 +1,4 @@
-const CACHE = "epbc-v2";
+const CACHE = "epbc-v3";
 const ASSETS = [
   "./",
   "./index.html",
