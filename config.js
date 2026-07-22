@@ -65,7 +65,7 @@ window.EPBC_CONFIG = {
     titreSection: "Le club EPBC",
     styleImage: "vignette",
     paves: [
-      { texte: "Entraîn.", image: "images/club/entrainements.jpg",
+      { texte: "Séances", image: "images/club/entrainements.jpg",
         lien: "https://www.ping2belleville.net/entra%C3%AEnements" },
       { texte: "Bureau", image: "images/club/bureau.jpg",
         lien: "https://www.ping2belleville.net/bureau" },
