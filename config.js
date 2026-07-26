@@ -73,7 +73,7 @@ window.EPBC_CONFIG = {
         lien: "https://www.ping2belleville.net/adh%C3%A9sion" },
       { texte: "Contact", image: "images/club/contact.jpg",
         lien: "https://www.ping2belleville.net/contact" },
-      { texte: "Site complet du club", image: "", large: true,
+      { texte: "Site web du club EPBC", image: "", large: true,
         lien: "https://www.ping2belleville.net/accueil" }
     ]
   },
