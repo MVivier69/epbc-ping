@@ -61,6 +61,8 @@
   .flash{display:block;background:var(--ink);color:#fff;border-radius:16px;
     overflow:hidden;text-decoration:none}
   .flash-img{width:100%;height:170px;object-fit:cover;display:block}
+  /* Variante NEWS : logo carré affiché entier, non recadré */
+  .flash.news-flash .flash-img{height:150px;object-fit:contain;padding:14px 0;background:#fff}
   .flash-body{display:flex;gap:14px;align-items:center;padding:16px 18px}
   .flash .date{font-family:"Archivo",sans-serif;font-weight:800;font-size:1.5rem;
     line-height:.95;color:#fff;text-align:center;min-width:56px}
@@ -227,6 +229,23 @@
     out+='<section aria-label="'+esc(cl.titreSection||"Le club")+'">'
        + (has(cl.titreSection)?'<p class="lbl">'+esc(cl.titreSection)+'</p>':'')
        + '<div class="grid">'+g+'</div></section>';
+  }
+
+  /* News (même structure que « À la une ») */
+  var n=C.news||{};
+  if(n.afficher!==false && (has(n.titre)||has(n.image))){
+    var ninner="";
+    if(has(n.image)) ninner+='<img class="flash-img" src="'+esc(n.image)+'" alt="'+esc(n.imageAlt||"")+'">';
+    var nbody="";
+    if(has(n.jour)) nbody+='<div class="date">'+esc(n.jour)+'<small>'+esc(n.mois||"")+'</small></div>';
+    nbody+='<div class="txt"><strong>'+esc(n.titre||"")+'</strong><span>'+esc(n.detail||"")+'</span></div>';
+    ninner+='<div class="flash-body">'+nbody+'</div>';
+    var ncls = "flash news-flash";
+    out+='<section aria-label="'+esc(n.titreSection||"News")+'">'
+       + (has(n.titreSection)?'<p class="lbl">'+esc(n.titreSection)+'</p>':'')
+       + (has(n.lien) ? '<a class="'+ncls+'" href="'+esc(n.lien)+'">'+ninner+'</a>'
+                      : '<div class="'+ncls+'">'+ninner+'</div>')
+       + '</section>';
   }
 
   /* Galerie photos */

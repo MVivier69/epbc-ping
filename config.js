@@ -78,6 +78,23 @@ window.EPBC_CONFIG = {
     ]
   },
 
+  /* --- ZONE « NEWS » (même structure que « À la une ») --------------
+     image : logo/visuel affiché en haut ("" = pas d'image).
+     titre : texte principal.
+     jour / mois : pastille date facultative ("" = masquée).
+     lien  : adresse ouverte au clic ("" = non cliquable).            */
+  news: {
+    afficher: true,
+    titreSection: "News",
+    image:  "images/news.jpg",
+    imageAlt: "Planète Ping",
+    jour:   "",
+    mois:   "",
+    titre:  "News de la Planète Ping",
+    detail: "",
+    lien:   "https://mvivier69.github.io/epbc-ping/EPBC%20News/EPBC%20News%20-%20Synth%C3%A8se.html"
+  },
+
   /* --- SECTION « GALERIE PHOTOS » -----------------------------------
      colonnes : 2, 3 ou 4 photos par ligne.
      legende  : texte sous la photo ("" = aucune légende).
