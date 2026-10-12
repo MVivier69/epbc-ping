@@ -73,26 +73,15 @@ window.EPBC_CONFIG = {
         lien: "https://www.ping2belleville.net/adh%C3%A9sion" },
       { texte: "Contact", image: "images/club/contact.jpg",
         lien: "https://www.ping2belleville.net/contact" },
-      { texte: "Site web du club EPBC", image: "", large: true,
+
+      /* --- Pavés pleine largeur (logo 46 px à gauche + texte) --------
+         "large: true" = le pavé occupe toute la largeur de l'écran.
+         Ordre voulu : d'abord News, puis Site web du club EPBC.        */
+      { texte: "News de la Planète Ping", image: "images/news.jpg", large: true,
+        lien: "https://mvivier69.github.io/epbc-ping/EPBC%20News/EPBC%20News%20-%20Synth%C3%A8se.html" },
+      { texte: "Site web du club EPBC", image: "images/club/site-web.jpg", large: true,
         lien: "https://www.ping2belleville.net/accueil" }
     ]
-  },
-
-  /* --- ZONE « NEWS » (même structure que « À la une ») --------------
-     image : logo/visuel affiché en haut ("" = pas d'image).
-     titre : texte principal.
-     jour / mois : pastille date facultative ("" = masquée).
-     lien  : adresse ouverte au clic ("" = non cliquable).            */
-  news: {
-    afficher: true,
-    titreSection: "News",
-    image:  "images/news.jpg",
-    imageAlt: "Planète Ping",
-    jour:   "",
-    mois:   "",
-    titre:  "News de la Planète Ping",
-    detail: "",
-    lien:   "https://mvivier69.github.io/epbc-ping/EPBC%20News/EPBC%20News%20-%20Synth%C3%A8se.html"
   },
 
   /* --- SECTION « GALERIE PHOTOS » -----------------------------------
