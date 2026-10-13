@@ -41,12 +41,12 @@ window.EPBC_CONFIG = {
     titreSection: "À la une",
     image:  "",    // "" = pas d'image sinon images/alaune.jpg
     imageAlt: "Tournoi",
-    jour:   "29",                   // "" = masque la pastille date
-    mois:   "Août",
-    titre:  "Tournoi de pré-saison - Ouvert à tous",
-    detail: "Samedi 29 août 2026",
-    detail: "Tournoi à 14h00 - Inscriptions à partir de 13h00",
-    lien:   "https://www.ping2belleville.net/a-la-une"  // "" = non cliquable
+    jour:   "15",                   // "" = masque la pastille date
+    mois:   "Novembre",
+    titre:  "Critérium fédéral sénior",
+    detail: "de 8h00 à 18h00",
+    detail: "Départementales 1 - 2 - 3",
+    lien:   ""  // "" = non cliquable
   },
 
   /* --- SECTION « LE CLUB » : pavés-liens avec vignettes -------------
