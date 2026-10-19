@@ -3,7 +3,7 @@
    de index.html ou sw.js (ex. "epbc-v4", "epbc-v5"...).
    NOTE : ce n'est PAS nécessaire pour config.js ni pour les images,
    qui sont rechargés automatiquement (voir stratégie plus bas). */
-const CACHE = "epbc-v8";
+const CACHE = "epbc-v9";
 
 /* Fichiers mis en cache dès l'installation (fonctionnement hors connexion) */
 const ASSETS = [
@@ -37,7 +37,11 @@ self.addEventListener("fetch", (e) => {
      la plus récente sur le réseau (pour que vos modifications et vos
      nouvelles images apparaissent immédiatement), avec repli sur le
      cache si l'appareil est hors connexion. */
-  const dynamique = url.pathname.endsWith("/config.js") || url.pathname.includes("/images/");
+  /* Dossier « EPBC News » (synthèse et pages des News, mises à jour chaque
+     semaine) : même traitement, réseau d'abord, pour que la dernière version
+     déposée sur GitHub s'affiche sans changer le numéro de version. */
+  const dynamique = url.pathname.endsWith("/config.js") || url.pathname.includes("/images/")
+    || url.pathname.includes("/EPBC%20News/");
   if (dynamique) {
     e.respondWith(
       fetch(req)
