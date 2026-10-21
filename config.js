@@ -96,8 +96,8 @@ window.EPBC_CONFIG = {
     titreSection: "Galerie photos",
     colonnes: 3,
     photos: [
-      { image: "images/galerie/photo-1.jpg", legende: "Adultes",  lien: "https://www.ping2belleville.net/phototh%C3%A8que" },
-      { image: "images/galerie/photo-2.jpg", legende: "Jeunes",   lien: "https://www.ping2belleville.net/phototh%C3%A8que" },
+      { image: "", legende: "",  lien: "" },
+      { image: "", legende: "",  lien: "" },
       { image: "", legende: "",  lien: "" }
     ],
     /* Pavé « Voir toutes les photos » (pleine largeur, comme News / Site web)
