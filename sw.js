@@ -3,7 +3,7 @@
    de index.html ou sw.js (ex. "epbc-v4", "epbc-v5"...).
    NOTE : ce n'est PAS nécessaire pour config.js ni pour les images,
    qui sont rechargés automatiquement (voir stratégie plus bas). */
-const CACHE = "epbc-v16";
+const CACHE = "epbc-v17";
 
 /* Fichiers mis en cache dès l'installation (fonctionnement hors connexion) */
 const ASSETS = [

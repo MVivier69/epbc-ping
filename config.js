@@ -100,7 +100,9 @@ window.EPBC_CONFIG = {
       { image: "images/galerie/photo-2.jpg", legende: "Jeunes",   lien: "https://www.ping2belleville.net/phototh%C3%A8que" },
       { image: "images/galerie/photo-3.jpg", legende: "Loisirs",  lien: "https://www.ping2belleville.net/phototh%C3%A8que" }
     ],
-    /* Bouton facultatif sous la galerie ("" = pas de bouton) */
+    /* Pavé « Voir toutes les photos » (pleine largeur, comme News / Site web)
+       boutonImage : vignette affichée à gauche du texte ("" = pas d'image) */
+    boutonImage: "images/club/galerie.jpg",
     boutonTexte: "Voir toutes les photos",
     boutonLien:  "https://www.ping2belleville.net/phototh%C3%A8que"
   },

@@ -245,10 +245,19 @@
              : (ga.colonnes==4||ga.colonnes==="4") ? " c4" : "";
       out+='<section aria-label="'+esc(ga.titreSection||"Galerie photos")+'">'
          + (has(ga.titreSection)?'<p class="lbl">'+esc(ga.titreSection)+'</p>':'')
-         + '<div class="gal'+nc+'">'+ph+'</div>'
-         + (has(ga.boutonTexte)&&has(ga.boutonLien)
-            ? '<a class="gal-btn" href="'+esc(ga.boutonLien)+'">'+esc(ga.boutonTexte)+'</a>' : '')
-         + '</section>';
+         + '<div class="gal'+nc+'">'+ph+'</div>';
+      // Bouton « Voir toutes les photos » : rendu comme un pave pleine largeur
+      // (vignette + texte + fleche), identique aux paves News / Site web.
+      if(has(ga.boutonTexte)&&has(ga.boutonLien)){
+        var bimg = has(ga.boutonImage)
+          ? '<span class="tile-left"><img class="vign" src="'+esc(ga.boutonImage)+'" alt="" loading="lazy">'
+            + '<span class="t">'+esc(ga.boutonTexte)+'</span></span>'
+          : '<span class="t">'+esc(ga.boutonTexte)+'</span>';
+        out+='<div class="grid" style="margin-top:10px">'
+           + '<a class="tile full" href="'+esc(ga.boutonLien)+'">'+bimg+'<span class="a">&rarr;</span></a>'
+           + '</div>';
+      }
+      out+='</section>';
     }
   }
 
