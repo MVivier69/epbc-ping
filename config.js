@@ -95,11 +95,9 @@ window.EPBC_CONFIG = {
     afficher: true,
     titreSection: "Galerie photos",
     colonnes: 3,
-    photos: [
-      { image: "", legende: "",  lien: "" },
-      { image: "", legende: "",  lien: "" },
-      { image: "", legende: "",  lien: "" }
-    ],
+    /* Liste vide : seul le pavé « Voir toutes les photos » est affiché.
+       Pour réafficher des vignettes, ajouter des lignes { image, legende, lien } ici. */
+    photos: [],
     /* Pavé « Voir toutes les photos » (pleine largeur, comme News / Site web)
        boutonImage : vignette affichée à gauche du texte ("" = pas d'image) */
     boutonImage: "images/club/galerie.jpg",
