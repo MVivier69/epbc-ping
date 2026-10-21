@@ -68,7 +68,7 @@ window.EPBC_CONFIG = {
       { texte: "Séances", image: "images/club/entrainements.jpg",
         lien: "seances.html" },
       { texte: "Bureau", image: "images/club/bureau.jpg",
-        lien: "https://www.ping2belleville.net/bureau" },
+        lien: "bureau.html" },
       { texte: "Adhésion", image: "images/club/adhesion.jpg",
         lien: "adhesion.html" },
       { texte: "Contact", image: "images/club/contact.jpg",
