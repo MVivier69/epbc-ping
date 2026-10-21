@@ -72,7 +72,7 @@ window.EPBC_CONFIG = {
       { texte: "Adhésion", image: "images/club/adhesion.jpg",
         lien: "https://www.ping2belleville.net/adh%C3%A9sion" },
       { texte: "Contact", image: "images/club/contact.jpg",
-        lien: "https://www.ping2belleville.net/contact" },
+        lien: "contact.html" },
 
       /* --- Pavés pleine largeur (logo 46 px à gauche + texte) --------
          "large: true" = le pavé occupe toute la largeur de l'écran.
