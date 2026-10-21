@@ -1,0 +1,64 @@
+<!doctype html>
+<!-- =====================================================================
+     EPBC PING — Page « Séances »
+     Affiche l'image d'entraînements téléchargée (telle quelle).
+     Appelée par le pavé « Séances » dans la même fenêtre.
+     Bouton « Retour » en haut à droite : revient à l'écran précédent.
+     ===================================================================== -->
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Séances — EPBC</title>
+<meta name="theme-color" content="#C51A1F">
+<link rel="icon" href="icons/icon-192.png">
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{background:#0b1a2b;min-height:100vh;
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+  /* L'image occupe la largeur, centrée, sans être recadrée */
+  .page{max-width:600px;margin:0 auto;background:#fff}
+  .poster{display:block;width:100%;height:auto}
+
+  /* ---- Bouton « Retour » — identique à l'application CDJ -------------
+     Même forme et dimensions que CDJ ; seule la couleur passe au rouge
+     de la charte EPBC (#C51A1F).                                       */
+  .back-button{
+    position:fixed; top:14px; right:14px; z-index:10;
+    display:inline-flex; align-items:center; gap:8px;
+    border:0; border-radius:999px; padding:12px 18px;
+    background:#C51A1F; color:white; font-size:15px;
+    font-weight:700; text-decoration:none; cursor:pointer;
+    box-shadow:0 4px 14px rgba(197,26,31,.28);
+  }
+  .back-button:hover{ background:#88161B; }
+  .back-button:focus-visible{ outline:3px solid #f5c400; outline-offset:3px; }
+  @media (max-width:480px){
+    .back-button{ top:10px; right:10px; padding:10px 14px; font-size:14px; }
+  }
+  /* Grand écran : rester au bord droit du visuel centré (max 600 px) */
+  @media (min-width:601px){ .back-button{ right:calc(50% - 300px + 14px); } }
+</style>
+</head>
+<body>
+  <!-- Bouton Retour : identique à CDJ, revient à l'écran précédent -->
+  <button class="back-button" type="button" onclick="retourPageAppel()" aria-label="Retour à la page d'appel">
+    <span aria-hidden="true">&larr;</span> Retour
+  </button>
+
+  <div class="page">
+    <img class="poster" src="images/seances.jpg"
+         alt="Entraînements EPBC — Saison 2026-2027 : Jeunes (mercredi) et Adultes (mardi et jeudi), à Lancié Aréna.">
+  </div>
+
+<script>
+  // Logique de retour reprise de l'application CDJ
+  function retourPageAppel(){
+    if (window.history.length > 1) { window.history.back(); }
+    else if (document.referrer) { window.location.href = document.referrer; }
+    else { window.location.href = "index.html"; }
+  }
+</script>
+</body>
+</html>
