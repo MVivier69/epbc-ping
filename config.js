@@ -104,7 +104,7 @@ window.EPBC_CONFIG = {
        boutonImage : vignette affichée à gauche du texte ("" = pas d'image) */
     boutonImage: "images/club/galerie.jpg",
     boutonTexte: "Voir toutes les photos",
-    boutonLien:  "https://www.ping2belleville.net/phototh%C3%A8que"
+    boutonLien:  "carousel.html"
   },
 
   /* --- SECTION « INFOS PRATIQUES » ---------------------------------
