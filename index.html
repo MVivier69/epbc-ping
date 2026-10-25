@@ -164,6 +164,10 @@
   function esc(t){ return String(t==null?"":t)
     .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
   function has(v){ return typeof v==="string" && v.trim()!==""; }
+  /* Liens externes : ne pas envoyer l'en-tete Referer (certains sites, comme
+     rhonelyontt.com, renvoient "Forbidden" quand on arrive depuis un autre
+     site) + ouverture securisee. Sans effet sur les liens internes/tel/mailto. */
+  function ext(u){ return /^https?:/i.test(u||"") ? ' rel="noreferrer" referrerpolicy="no-referrer"' : ""; }
 
   /* Couleurs personnalisables */
   var col=C.couleurs||{}, rs=document.documentElement.style;
@@ -180,7 +184,7 @@
   var b=C.banniere||{}, hero=document.getElementById("heroInner");
   if(has(b.image)){
     var img='<img class="banner" src="'+esc(b.image)+'" alt="'+esc(b.alt||"")+'">';
-    hero.innerHTML = has(b.lien) ? '<a href="'+esc(b.lien)+'" style="display:block;width:100%">'+img+'</a>' : img;
+    hero.innerHTML = has(b.lien) ? '<a href="'+esc(b.lien)+'"'+ext(b.lien)+' style="display:block;width:100%">'+img+'</a>' : img;
   }
 
   var out="";
@@ -196,7 +200,7 @@
     inner+='<div class="flash-body">'+body+'</div>';
     out+='<section aria-label="'+esc(a.titreSection||"À la une")+'">'
        + (has(a.titreSection)?'<p class="lbl">'+esc(a.titreSection)+'</p>':'')
-       + (has(a.lien) ? '<a class="flash" href="'+esc(a.lien)+'">'+inner+'</a>'
+       + (has(a.lien) ? '<a class="flash" href="'+esc(a.lien)+'"'+ext(a.lien)+'>'+inner+'</a>'
                       : '<div class="flash">'+inner+'</div>')
        + '</section>';
   }
@@ -222,7 +226,7 @@
       } else {
         corps = '<span class="t">'+esc(p.texte)+'</span><span class="a">&rarr;</span>';
       }
-      g+='<a class="'+cls+'" href="'+esc(p.lien||"#")+'">'+corps+'</a>';
+      g+='<a class="'+cls+'" href="'+esc(p.lien||"#")+'"'+ext(p.lien)+'>'+corps+'</a>';
     });
     out+='<section aria-label="'+esc(cl.titreSection||"Le club")+'">'
        + (has(cl.titreSection)?'<p class="lbl">'+esc(cl.titreSection)+'</p>':'')
@@ -239,7 +243,7 @@
       if(!x||!has(x.image)) return;
       var vis='<img src="'+esc(x.image)+'" alt="'+esc(x.legende||"")+'" loading="lazy">'
             + (has(x.legende)?'<span class="cap">'+esc(x.legende)+'</span>':'');
-      ph += has(x.lien) ? '<a class="ph" href="'+esc(x.lien)+'">'+vis+'</a>'
+      ph += has(x.lien) ? '<a class="ph" href="'+esc(x.lien)+'"'+ext(x.lien)+'>'+vis+'</a>'
                         : '<span class="ph">'+vis+'</span>';
     });
     out+='<section aria-label="'+esc(ga.titreSection||"Galerie photos")+'">'
@@ -258,7 +262,7 @@
           + '<span class="t">'+esc(ga.boutonTexte)+'</span></span>'
         : '<span class="t">'+esc(ga.boutonTexte)+'</span>';
       out+='<div class="grid"'+(ph?' style="margin-top:10px"':'')+'>'
-         + '<a class="tile full" href="'+esc(ga.boutonLien)+'">'+bimg+'<span class="a">&rarr;</span></a>'
+         + '<a class="tile full" href="'+esc(ga.boutonLien)+'"'+ext(ga.boutonLien)+'>'+bimg+'<span class="a">&rarr;</span></a>'
          + '</div>';
     }
     out+='</section>';
@@ -270,7 +274,7 @@
     var r="";
     inf.lignes.forEach(function(l){
       if(!l||!has(l.titre)) return;
-      r+='<a class="row" href="'+esc(l.lien||"#")+'">'
+      r+='<a class="row" href="'+esc(l.lien||"#")+'"'+ext(l.lien)+'>'
        + '<span class="ico">'+esc(l.icone||"")+'</span>'
        + '<span class="main"><span class="k">'+esc(l.titre)+'&nbsp;&nbsp;</span>'
        + '<span class="v">'+esc(l.detail||"")+'</span></span></a>';
@@ -286,7 +290,7 @@
     var c="";
     li.boutons.forEach(function(x){
       if(!x||!has(x.texte)) return;
-      c+='<a class="chip" href="'+esc(x.lien||"#")+'">'+esc(x.texte)+'</a>';
+      c+='<a class="chip" href="'+esc(x.lien||"#")+'"'+ext(x.lien)+'>'+esc(x.texte)+'</a>';
     });
     out+='<section aria-label="'+esc(li.titreSection||"Liens")+'">'
        + (has(li.titreSection)?'<p class="lbl">'+esc(li.titreSection)+'</p>':'')
@@ -299,7 +303,7 @@
   var p=C.piedDePage||{};
   if(p.afficher===true){
     document.getElementById("pied").innerHTML =
-      esc(p.texte||"")+(has(p.lien)?'<a href="'+esc(p.lien)+'">'+esc(p.lienTexte||p.lien)+'</a>':"");
+      esc(p.texte||"")+(has(p.lien)?'<a href="'+esc(p.lien)+'"'+ext(p.lien)+'>'+esc(p.lienTexte||p.lien)+'</a>':"");
   }
 })();
 
