@@ -80,7 +80,7 @@ window.EPBC_CONFIG = {
       /* Résultats & classements : la fiche club du Comité du Rhône n'a pas
          d'URL propre (page dynamique) ; on ouvre la carte des clubs, où il
          suffit de resélectionner EPBC. */
-      { texte: "Résultats - Comité du Rhône", image: "images/club/resultats.jpg", large: true,
+      { texte: "Résultats EPBC - Comité du Rhône", image: "images/club/resultats.jpg", large: true,
         lien: "https://www.rhonelyontt.com/carte-des-clubs/" },
       { texte: "News de la Planète Ping", image: "images/news.jpg", large: true,
         lien: "https://mvivier69.github.io/epbc-ping/EPBC%20News/EPBC%20News%20-%20Synth%C3%A8se.html" },
