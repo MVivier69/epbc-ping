@@ -167,7 +167,7 @@
   /* Liens externes : ne pas envoyer l'en-tete Referer (certains sites, comme
      rhonelyontt.com, renvoient "Forbidden" quand on arrive depuis un autre
      site) + ouverture securisee. Sans effet sur les liens internes/tel/mailto. */
-  function ext(u){ return /^https?:/i.test(u||"") ? ' target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer"' : ""; }
+  function ext(u){ return /^https?:/i.test(u||"") ? ' rel="noreferrer" referrerpolicy="no-referrer"' : ""; }
 
   /* Couleurs personnalisables */
   var col=C.couleurs||{}, rs=document.documentElement.style;
