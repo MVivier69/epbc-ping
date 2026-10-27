@@ -78,8 +78,6 @@ window.EPBC_CONFIG = {
          "large: true" = le pavé occupe toute la largeur de l'écran.      */
       /* Résultats & classements : lien direct vers la division sur le
          portail officiel FFTT (monclub.fftt.com). */
-      { texte: "Résultats EPBC", image: "images/club/resultats.jpg", large: true,
-        lien: "https://monclub.fftt.com/contests/team/consult?seasonId=27&orgId=73&contestId=18368&divisionId=234127" },
       { texte: "News de la Planète Ping", image: "images/news.jpg", large: true,
         lien: "https://mvivier69.github.io/epbc-ping/EPBC%20News/EPBC%20News%20-%20Synth%C3%A8se.html" },
       { texte: "Site web du club EPBC", image: "images/club/site-web.jpg", large: true,
